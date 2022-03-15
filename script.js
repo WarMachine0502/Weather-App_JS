@@ -45,31 +45,31 @@ function showWeatherReport(weather){
 
     
     if(weatherType.textContent == 'Clear') {
-        document.body.style.backgroundImage = "url('https://source.unsplash.com/1600x900/?sky')";
+        document.body.style.backgroundImage = "url('assets/clear.jpg')";
         
     } else if(weatherType.textContent == 'Clouds') {
 
-        document.body.style.backgroundImage = "url('https://source.unsplash.com/1600x900/?landscape, cloudy')";
+        document.body.style.backgroundImage = "url('assets/clouds.jpg')";
         
     } else if(weatherType.textContent == 'Haze') {
 
-        document.body.style.backgroundImage = "url('https://source.unsplash.com/1600x900/?landscape, hazy')";
+        document.body.style.backgroundImage = "url('assets/clouds.jpg')";
         
     }     else if(weatherType.textContent == 'Rain') {
         
-        document.body.style.backgroundImage = "url('https://source.unsplash.com/1600x900/?landscape, rain')";
+        document.body.style.backgroundImage = "url('assets/rain.jpg')";
         
     } else if(weatherType.textContent == 'Snow') {
         
-        document.body.style.backgroundImage = "url('https://source.unsplash.com/1600x900/?landscape, snow')";
+        document.body.style.backgroundImage = "url('assets/snow.jpg')";
     
     } else if(weatherType.textContent == 'Thunderstorm') {
     
-        document.body.style.backgroundImage = "url('https://source.unsplash.com/1600x900/?landscape, thunder')";
+        document.body.style.backgroundImage = "url('assets/thunder.jpg')";
         
-    } else if(weatherType.textContent == 'mist') {
+    } else if(weatherType.textContent == 'Mist') {
 
-        document.body.style.backgroundImage = "url('https://source.unsplash.com/1600x900/?landscape, mist')";
+        document.body.style.backgroundImage = "url('assets/mist.jpg')";
     }
 }
 
