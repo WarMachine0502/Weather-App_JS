@@ -1,22 +1,21 @@
 const weatherApi = {
-    key: "bab281d79e5f1e9755a68d754cc313e7",
+    key: "037a35ec00a7b7cc42df1f1ed34806eb",
     baseUrl: "https://api.openweathermap.org/data/2.5/weather", 
 }
 
-const searchInputBox = document.getElementById('input-box');
+const search = document.getElementById('input-box');
 
-// Event Listener Function on keypress
-searchInputBox.addEventListener('keypress', (event) => {
+search.addEventListener('keypress', (event) => {
     
     if(event.keyCode == 13) {
-        console.log(searchInputBox.value);
-        getWeatherReport(searchInputBox.value);
+        document.getElementById('app-main').style.margin = "100px auto";
+        console.log(search.value);
+        getWeatherReport(search.value);
         document.querySelector('.weather-body').style.display = "block";
     }
 
 });
 
-// Get Weather Report
 function getWeatherReport(city) {
     fetch(`${weatherApi.baseUrl}?q=${city}&appid=${weatherApi.key}&units=metric`)
     .then(weather => {
@@ -24,9 +23,9 @@ function getWeatherReport(city) {
     }).then(showWeatherReport);
 }
 
-// Show Weather Report
 function showWeatherReport(weather){
     console.log(weather);
+
 
     let city = document.getElementById('city');
     city.innerText = `${weather.name}, ${weather.sys.country}`;
@@ -46,32 +45,31 @@ function showWeatherReport(weather){
 
     
     if(weatherType.textContent == 'Clear') {
-        document.body.style.backgroundImage = "url('images/clear.jpg')";
+        document.body.style.backgroundImage = "url('https://source.unsplash.com/1600x900/?sky')";
         
     } else if(weatherType.textContent == 'Clouds') {
 
-        document.body.style.backgroundImage = "url('images/cloud.jpg')";
+        document.body.style.backgroundImage = "url('https://source.unsplash.com/1600x900/?landscape, cloudy')";
         
     } else if(weatherType.textContent == 'Haze') {
 
-        document.body.style.backgroundImage = "url('images/cloud.jpg')";
+        document.body.style.backgroundImage = "url('https://source.unsplash.com/1600x900/?landscape, hazy')";
         
     }     else if(weatherType.textContent == 'Rain') {
         
-        document.body.style.backgroundImage = "url('images/rain.jpg')";
+        document.body.style.backgroundImage = "url('https://source.unsplash.com/1600x900/?landscape, rain')";
         
     } else if(weatherType.textContent == 'Snow') {
         
-        document.body.style.backgroundImage = "url('images/snow.jpg')";
+        document.body.style.backgroundImage = "url('https://source.unsplash.com/1600x900/?landscape, snow')";
     
     } else if(weatherType.textContent == 'Thunderstorm') {
     
-        document.body.style.backgroundImage = "url('images/thunderstorm.jpg')";
+        document.body.style.backgroundImage = "url('https://source.unsplash.com/1600x900/?landscape, thunder')";
         
     } 
 }
 
-// Date manage
 function dateManage(dateArg) {
 
     let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
