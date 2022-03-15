@@ -2,39 +2,43 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    transition: 0.25s ease-in-out;
 }
 
 body {
-    background-image: url('https://source.unsplash.com/1600x900/?sunny,sky');
+    background-image: url('https://source.unsplash.com/1600x900/?landscape, city');
     height: 100vh;
     overflow: hidden;
     background-repeat: no-repeat;
     background-position: top center;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Varela Round', sans-serif;
     background-size: cover;
 }
 
 .app-main {
     width: 50vh;
-    margin: 100px auto;
     background-color: rgba(240,248,255, 0.6);
     padding: 20px;
+    margin: 300px auto;
     text-align: center;
+    border-radius: 25px;
 }
 
 .app-main > * {
     margin-bottom: 20px;
 }
 
+
+
 .input-box {
     width: 100%;
     background-color: rgba(255,255,255,0.6);
     border: none;
     outline: none;
-    color: #582233;
-    font-size: 1.2rem;
+    color: black;
+    font-size: 1.5rem;
     height: 50px;
-    border-radius: 5px;
+    border-radius: 25px;
     padding: 0 10px;
     text-align: center;
 }
@@ -46,12 +50,19 @@ body {
 
 .weather-body {
     display: none;
-    color: #582233;
+    color: black;
+    background-color: rgba(255, 255, 255, 0.479);
     padding: 20px;
-    line-height: 2rem;
-    border-radius: 10px;
-    background-color: rgba(255,255,255,0.6);
+    line-height: 3rem;
+    border-radius: 25px;
     height: 50vh;
+    margin-top: 3em;
+}
+
+.weather-body:hover {
+    background-color: black;
+    transform: scale(1.02);
+    color: white;
 }
 
 .location-details {
@@ -66,13 +77,19 @@ body {
     font-size: 50pt;
     font-weight: 700;
     margin: 20px 0;
-    text-shadow: 2px 4px rgba(0,0,0,0.3);
 }
 
 .min-max, .weather {
     font-size: 12pt;
     font-weight: 600;
 }
+
+
+
+
+
+
+
 
 
 
