@@ -8,6 +8,7 @@
 body {
     height: 100vh;
     overflow: hidden;
+    background-image: url('https://source.unsplash.com/1600x900/?landscape');
     background-repeat: no-repeat;
     background-position: top center;
     font-family: 'Varela Round', sans-serif;
