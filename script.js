@@ -67,7 +67,10 @@ function showWeatherReport(weather){
     
         document.body.style.backgroundImage = "url('https://source.unsplash.com/1600x900/?landscape, thunder')";
         
-    } 
+    } else if(weatherType.textContent == 'mist') {
+
+        document.body.style.backgroundImage = "url('https://source.unsplash.com/1600x900/?landscape, mist')";
+    }
 }
 
 function dateManage(dateArg) {
