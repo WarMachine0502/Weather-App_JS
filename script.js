@@ -21,20 +21,24 @@ function getWeatherReport(city) {
     .then(weather => {
         return weather.json();
     }).then(showWeatherReport);
+    
 }
 
 function showWeatherReport(weather){
     console.log(weather);
-
+    document.querySelector('.toggle').addEventListener('click', toggle);
 
     let city = document.getElementById('city');
     city.innerText = `${weather.name}, ${weather.sys.country}`;
 
     let temperature = document.getElementById('temp');
-    temperature.innerHTML = `${Math.round(weather.main.temp)}&deg;C`;
+    temperature.innerHTML = `${(weather.main.temp).toFixed(2)}&deg;C`;
 
-    let minMaxTemp = document.getElementById('min-max');
-    minMaxTemp.innerHTML = `${Math.floor(weather.main.temp_min)}&deg;C (min)/ ${Math.ceil(weather.main.temp_max)}&deg;C (max) `;
+    let minTemp = document.getElementById('min');
+    minTemp.innerHTML = `${(weather.main.temp_min).toFixed(2)}&deg;C`;
+
+    let maxTemp = document.getElementById('max');
+    maxTemp.innerHTML = `${(weather.main.temp_max).toFixed(2)}&deg;C`;
 
     let weatherType = document.getElementById('weather');
     weatherType.innerText = `${weather.weather[0].main}`;
@@ -42,6 +46,8 @@ function showWeatherReport(weather){
     let date = document.getElementById('date');
     let todayDate = new Date();
     date.innerText = dateManage(todayDate);
+
+    
 
     
     if(weatherType.textContent == 'Clear') {
@@ -71,7 +77,36 @@ function showWeatherReport(weather){
 
         document.body.style.backgroundImage = "url('assets/mist.jpg')";
     }
+
+    
+    document.querySelector('.toggle').addEventListener('click', toggle);
+
+    toggle();
+
+    
 }
+
+function toggle() {
+       const temp = document.querySelector('.temp');
+       const minTemp = document.querySelector('.minvalue');
+       const maxTemp = document.querySelector('.maxvalue');
+       const toggle = document.querySelector('.toggle');
+       const toggle_c = document.querySelector('.toggle_c');
+
+       if(toggle.classList.contains('active')) {
+          temp.innerText = ((parseFloat(temp.innerText) - 32) * 5 / 9).toFixed(2) + "°C";
+          minTemp.innerText = ((parseFloat(minTemp.innerText) - 32) * 5 / 9).toFixed(2) + "°C";
+          maxTemp.innerText = ((parseFloat(maxTemp.innerText) - 32) * 5 / 9).toFixed(2) + "°C";
+          toggle.classList.remove('active');
+          toggle_c.classList.add('active');
+       } else {
+          temp.innerText = ((parseFloat(temp.innerText) * 9 / 5) + 32).toFixed(2) + "°F";
+          minTemp.innerText = ((parseFloat(minTemp.innerText) * 9 / 5) + 32).toFixed(2) + "°F";
+          maxTemp.innerText = ((parseFloat(maxTemp.innerText) * 9 / 5) + 32).toFixed(2) + "°F";
+          toggle.classList.add('active');
+          toggle_c.classList.remove('active');
+       }
+    }
 
 function dateManage(dateArg) {
 

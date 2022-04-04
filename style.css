@@ -25,7 +25,7 @@ body {
 }
 
 .app-main > * {
-    margin-bottom: 20px;
+    margin-bottom: 8px;
 }
 
 
@@ -55,33 +55,49 @@ body {
     padding: 20px;
     line-height: 3rem;
     border-radius: 25px;
-    height: 50vh;
-    margin-top: 3em;
+    height: 55vh;
+    margin-top: 1em;
 }
 
-.weather-body:hover {
-    background-color: black;
-    transform: scale(1.02);
+.weather-body:hover{
+    transform: scale(1.01);
+}
+
+
+.toggle{
     color: white;
+    background-color: black;
+    padding: 20px;
+    line-height: 0rem;
+    border: 0px;
+    border-radius: 25px;
+    font-weight: bold;
+}
+
+.toggle:hover{
+    color: black;
+    background-color: white;
+    transform: scale(1.05 );
 }
 
 .location-details {
     font-weight: bold;
 }
 
-.weather-status {
-    padding: 20px;
-}
 
 .temp {
-    font-size: 50pt;
+    font-size: 40pt;
     font-weight: 700;
-    margin: 20px 0;
+    margin: 15px -6px;
 }
 
-.min-max, .weather {
+.min, .max, .weather {
     font-size: 12pt;
     font-weight: 600;
+}
+
+.mintext, .minvalue, .maxtext, .maxvalue {
+    display: inline-block;
 }
 
 
